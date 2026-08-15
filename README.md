@@ -1,102 +1,220 @@
-# House Price Prediction
 
-## Project Overview
+# 🏠 Bengaluru House Price Prediction
 
-This project predicts house prices in Bengaluru using machine learning.
+A Machine Learning project that predicts **house prices in Bengaluru** based on property details such as location, total area, number of bathrooms, balconies, and BHK.
 
-The project uses property-related information such as location, total square feet, number of bathrooms, balcony availability, and number of bedrooms (BHK) to estimate house prices.
+The project includes complete data analysis, visualization, model training, evaluation, and a deployed Streamlit web application.
 
-## Dataset
+## 🚀 Live Demo
 
-The dataset contains Bengaluru house property information.
+Try the deployed application:
 
-Initial dataset:
-- Records: 13,320
-- Features: 9
+👉 [Bengaluru House Price Prediction](https://bengaluru-house-price-prediction-vanshika.streamlit.app)
 
-After data preprocessing and outlier removal:
-- Records: 12,362
-- Features used for prediction: 6
+## 📌 Project Overview
 
-## Features Used
+The goal of this project is to build a machine learning model that can estimate the price of a residential property in Bengaluru.
+
+The project follows a complete Machine Learning workflow:
+
+- Data collection
+- Data cleaning
+- Exploratory Data Analysis (EDA)
+- Data preprocessing
+- Feature engineering
+- Data visualization
+- Model training
+- Model evaluation
+- Model saving
+- Streamlit application development
+- Cloud deployment
+
+## 📊 Dataset
+
+The dataset contains Bengaluru residential property information including:
 
 - Location
-- Total Square Feet
-- Bathroom
-- Balcony
+- Total square feet
+- Number of bathrooms
+- Number of balconies
 - BHK
+- Price
 
-## Data Preprocessing
-
-The following preprocessing steps were performed:
-
-1. Loaded the Bengaluru house price dataset.
-2. Handled missing values.
-3. Converted `total_sqft` into numerical values.
-4. Extracted BHK values from the `size` column.
-5. Removed unrealistic BHK values.
-6. Created a `price_per_sqft` feature.
-7. Removed price-per-square-foot outliers.
-8. Grouped rare locations into `other`.
-9. Removed unnecessary columns.
-10. Converted location into numerical features.
-11. Split the dataset into training and testing sets.
-
-## Machine Learning Models
-
-### Linear Regression
-
-- R² Score: 0.7284
-- MAE: 29.51 lakhs
-- RMSE: 51.17 lakhs
-
-### Random Forest Regression
-
-- R² Score: 0.6724
-- MAE: 25.20 lakhs
-- RMSE: 56.19 lakhs
-
-Linear Regression performed better overall based on R² and RMSE.
-
-## Visualizations
-
-The project contains the following visualizations:
-
-1. House Price Distribution
-2. BHK Distribution
-3. House Area vs Price
-4. Actual Price vs Predicted Price
-5. Prediction Error Distribution
-
-## Example Prediction
-
-For one test example:
-
-- Actual Price: 75.00 lakhs
-- Predicted Price: 66.13 lakhs
-
-## Model Saving
-
-The trained Linear Regression model was saved as:
-
-`model/house_price_model.pkl`
-
-The saved model was successfully loaded and tested.
-
-## Project Structure
+Dataset file:
 
 ```text
-HOUSE-PRICE-PREDICTION/
-│
-├── data/
-│   └── Bengaluru_House_Data.csv
-│
-├── images/
-│
-├── model/
-│   └── house_price_model.pkl
-│
-├── notebook/
-│   └── house_price_prediction.ipynb
-│
-└── README.md
+data/Bengaluru_House_Data.csv
+```
+
+## 📈 Exploratory Data Analysis
+
+The dataset was explored using different visualizations to understand the distribution and relationships between the variables.
+
+### Graph 1 — House Price Distribution
+
+The distribution of house prices was visualized using a histogram to understand the spread of property prices.
+
+### Graph 2 — BHK Distribution
+
+The distribution of the number of bedrooms (BHK) was analyzed to understand the common property configurations.
+
+### Graph 3 — Area vs Price
+
+A scatter plot was used to analyze the relationship between total property area and house price.
+
+## 🤖 Machine Learning Model
+
+The project uses **Linear Regression** to predict house prices.
+
+The trained model is saved as:
+
+```text
+model/house_price_model.pkl
+```
+
+## 📋 Model Evaluation
+
+Model evaluation and performance details are documented in:
+
+```text
+model_evaluation_report.md
+```
+
+The evaluation report contains information about the model performance and prediction results.
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Streamlit
+- Joblib
+- Jupyter Notebook
+- Git
+- GitHub
+
+## 🧠 Project Workflow
+
+```text
+Dataset
+   ↓
+Data Cleaning
+   ↓
+Exploratory Data Analysis
+   ↓
+Data Preprocessing
+   ↓
+Feature Engineering
+   ↓
+Model Training
+   ↓
+Model Evaluation
+   ↓
+Model Saving
+   ↓
+Streamlit Application
+   ↓
+Deployment
+```
+
+## 💻 Running the Project Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/vihu-debug/House-Price-Prediction.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd House-Price-Prediction
+```
+
+### 3. Install the required dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+## 🌐 Deployment
+
+The application is deployed using **Streamlit Community Cloud**.
+
+### Live Application
+
+👉 [Bengaluru House Price Prediction](https://bengaluru-house-price-prediction-vanshika.streamlit.app)
+
+### GitHub Repository
+
+👉 [House Price Prediction](https://github.com/vihu-debug/House-Price-Prediction)
+
+## 📓 Jupyter Notebook
+
+The complete data analysis, preprocessing, visualization, model training, and evaluation workflow is available in:
+
+```text
+notebook/house_price_prediction.ipynb
+```
+
+## 📦 Requirements
+
+The required Python libraries are listed in:
+
+```text
+requirements.txt
+```
+
+Main dependencies include:
+
+- Streamlit
+- NumPy
+- Scikit-learn
+- Pandas
+- Matplotlib
+- Joblib
+
+## 🎯 Features of the Application
+
+The Streamlit application allows users to enter:
+
+- Location
+- Total Area (sq ft)
+- Number of Bathrooms
+- Number of Balconies
+- Number of Bedrooms (BHK)
+
+After entering the property details, the application predicts the estimated house price.
+
+## 📌 Future Improvements
+
+Possible improvements for the project include:
+
+- Trying additional machine learning algorithms
+- Hyperparameter tuning
+- Improving model accuracy
+- Adding more advanced feature engineering
+- Adding interactive visualizations
+- Expanding the application with additional property analysis features
+
+## 👩‍💻 Author
+
+**Vanshika Chaudhary**
+
+GitHub:
+
+👉 [vihu-debug](https://github.com/vihu-debug)
+
+## ⭐ Project
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
